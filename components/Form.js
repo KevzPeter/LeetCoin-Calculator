@@ -7,7 +7,9 @@ import styles from "../styles/Form.module.scss";
 
 const Form=()=>{
 
-    const [endDate, setEndDate] = useState(null);
+    const [res1, setRes1] = useState(null);
+    const [res2, setRes2] = useState(null);
+    const [res3, setRes3] = useState(null);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -15,8 +17,9 @@ const Form=()=>{
         let currCoins = e.target.coins.value;
         let coinsNeeded = Math.max(0, rewardCost - currCoins);
         let streak = Math.min((new Date).getDate(), e.target.streak.value);
-        let res = calculate(coinsNeeded, streak);
-        setEndDate(res);
+        setRes1(calculate(coinsNeeded, streak, "contest"));
+        setRes2(calculate(coinsNeeded, streak, "daily"));
+        setRes3(calculate(coinsNeeded, streak, "checkIn"));
     }
 
     return(
@@ -42,7 +45,11 @@ const Form=()=>{
                 </div>
                 <button type="submit">Calculate</button>
             </form>
-            {endDate == null ? null : <Result endDate={endDate}/>}
+            <div className={styles.container}>
+                {res1 && <Result endDate={res1} type="contest"/>}
+                {res2 && <Result endDate={res2} type="daily"/>}
+                {res3 && <Result endDate={res3} type="checkIn"/>}
+            </div>
             </>
     )
 }
