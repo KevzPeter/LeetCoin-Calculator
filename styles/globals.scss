@@ -1,3 +1,4 @@
+@import "colors";
 html,
 body {
   padding: 0;
@@ -13,4 +14,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+button{
+  margin-top: 1rem;
+  background-color: $blue;
+  padding: .5rem;
+  color: $white;
+  border-radius: 5px;
+  border: none;
+  &:hover{
+    cursor: pointer;
+  }
 }
