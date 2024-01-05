@@ -3,20 +3,23 @@
 .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    box-shadow: $shadow;
     border-radius: 10px;
     padding: 2rem;
-
+    gap: 2rem;
+    background-color: $dark-secondary;
     .formGroup {
-        margin: 1rem 0;
         display: grid;
-        grid-template-columns: 200px 150px;
-
-        input {
+        grid-template-columns: 1fr 1fr;
+        input, select {
             border-radius: 5px;
             border: 1px solid;
         }
+        @media screen and (max-width : 500px) {
+            grid-template-columns: 180px 120px;
+        }
+    }
+    button{
+        margin: 0 auto;
     }
 }
 

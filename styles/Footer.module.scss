@@ -1,0 +1,10 @@
+@import "colors";
+
+.footer{
+    display: flex;
+    justify-content: center;
+    a{
+        color: $blue;
+        text-decoration: underline;
+    }
+}
