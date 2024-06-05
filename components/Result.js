@@ -1,43 +1,19 @@
-import styles from "../styles/Result.module.scss"
+const Result = (props) => {
 
-const Result=(props)=>{
-
-    const renderSwitch=()=>{
-        switch(props.type){
-            case "contest":
-                return(
-                    <div className={styles.result}>
-                        <span>✅ Daily Check-in</span>
-                        <span>✅ Daily Challenge</span>
-                        <span>✅ Weekly Contest</span>
-                        <span>✅ Biweekly Contest</span>
-                        <span>You can redeem your reward on <strong id={styles.green}>{props.endDate}</strong></span>
-                    </div>
-                )
-            case "daily":
-                return(
-                    <div className={styles.result}>
-                        <span>✅ Daily Check-in</span>
-                        <span>✅ Daily Challenge</span>
-                        <span>❌ Weekly Contest</span>
-                        <span>❌ Biweekly Contest</span>
-                        <span>You can redeem your reward on <strong id={styles.orange}>{props.endDate}</strong></span>
-                    </div>
-                )
-            case "checkIn":
-                return(
-                    <div className={styles.result}>
-                        <span>✅ Daily Check-in</span>
-                        <span>❌ Daily Challenge</span>
-                        <span>❌ Weekly Contest</span>
-                        <span>❌ Biweekly Contest</span>
-                        <span>You can redeem your reward on <strong id={styles.red}>{props.endDate}</strong></span>
-                    </div>
-                )
-        }
+    const renderSwitch = () => {
+        return (
+            <div className="flex flex-col rounded-xl p-4 m-2 text-left bg-slate-800">
+                <span>{props.config.dailyCheckin ? "✅" : "❌"} Daily Check-in</span>
+                <span>{props.config.dailyChallenge ? "✅" : "❌"} Daily Challenge</span>
+                <span>{props.config.weeklyContest ? "✅" : "❌"} Weekly Contest</span>
+                <span>{props.config.biweeklyContest ? "✅" : "❌"} Biweekly Contest</span>
+                <span>{props.config.premiumWeekly ? "✅" : "❌"} 4 Weekly Challenges (Premium)</span>
+                <span className="mt-2">You can redeem your reward on <strong className={props.textColor}>{props.endDate}</strong></span>
+            </div>
+        )
     }
 
-    return(
+    return (
         <div>
             {renderSwitch()}
         </div>
