@@ -1,9 +1,7 @@
-import styles from "../styles/Footer.module.scss"
-
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
-            Created by&nbsp;<a href="https://leetcode.com/kevzpeter" target="_blank" rel="noreferrer">@kevzpeter</a>
+        <footer className="flex justify-center mb-8">
+            Created by&nbsp;<a href="https://leetcode.com/kevzpeter" target="_blank" rel="noreferrer" className="text-blue-500 visited:text-purple-600">@kevzpeter</a>
         </footer>
     )
 }
