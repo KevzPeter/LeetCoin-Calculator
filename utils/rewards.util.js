@@ -5,31 +5,31 @@ const rewards = [
     },
     {
         "name": "💲 30-Day Premium Subscription",
-        "coins": 5000
-    },
-    {
-        "name": "🧢 LeetCode Cap",
-        "coins": 5400
-    },
-    {
-        "name": "👕 LeetCode T-Shirt",
         "coins": 6000
     },
     {
+        "name": "🧢 LeetCode Cap",
+        "coins": 6500
+    },
+    {
+        "name": "👕 LeetCode T-Shirt",
+        "coins": 7200
+    },
+    {
         "name": "👕✨ LeetCode Kit",
-        "coins": 7800
+        "coins": 9400
     },
     {
         "name": "💻 LeetCode Laptop Sleeve",
-        "coins": 8000
+        "coins": 9600
     },
-    {
-        "name": "🧥 LeetCode Hoodie",
-        "coins": 9000
-    },
+    // {
+    //     "name": "🧥 LeetCode Hoodie",
+    //     "coins": 9000
+    // },
     {
         "name": "📓 LeetCode Big-O Notebook",
-        "coins": 9900
+        "coins": 12000
     },
 ]
 
